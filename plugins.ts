@@ -15,6 +15,7 @@ import toc from "https://deno.land/x/lume_markdown_plugins@v0.8.0/toc.ts";
 import image from "https://deno.land/x/lume_markdown_plugins@v0.8.0/image.ts";
 import footnotes from "https://deno.land/x/lume_markdown_plugins@v0.8.0/footnotes.ts";
 import { alert } from "npm:@mdit/plugin-alert@0.14.0";
+import katex from "lume/plugins/katex.ts";
 
 import "lume/types.ts";
 
@@ -59,6 +60,7 @@ export default function (userOptions?: Options) {
       .use(pagefind(options.pagefind))
       .use(sitemap())
       .use(feed(options.feed))
+      .use(katex())
       .copy("fonts")
       .copy("js")
       .copy("favicon.png")

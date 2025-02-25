@@ -15,6 +15,7 @@
     <link rel="alternate" href="/feed.json" type="application/json" title="{{ metas.site }}">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     <link rel="canonical" href="{{ url |> url(true) }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.2/dist/katex.css">
     <script src="/js/main.js" type="module"></script>
     {{ it.extra_head?.join("\n") }}
   </head>
@@ -38,7 +39,7 @@
       {{ /for }}
       {{- for link of it.menu_links }}
         <li>
-          <a href="{{ link.href }}"{{ if link.target }} target="{{link.target}}"{{ /if }}>
+          <a href="{{ link.href }}">
             {{ link.text }}
           </a>
         </li>
