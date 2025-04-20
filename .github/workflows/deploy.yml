@@ -17,6 +17,6 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy with Zola Action
-        uses: zbrox/zola-deploy-action@master
+        uses: shalzz/zola-deploy-action@v0.20.0
         env:
-          TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
