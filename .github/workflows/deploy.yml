@@ -1,0 +1,22 @@
+name: Build and deploy on push
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Deploy with Zola Action
+        uses: zbrox/zola-deploy-action@master
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
